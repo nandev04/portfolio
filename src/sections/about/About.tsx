@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <section className="pt-12 ">
-      <div className="bg-dark-grey-800 bg-shapes bg-cover bg-center bg-no-repeat rounded-l-2xl ml-50 min-h-80 p-8">
+      <div className="bg-dark-grey-800 bg-shape-about bg-cover bg-center bg-no-repeat rounded-l-2xl ml-50 min-h-80 p-8">
         <h2 className=" text-white -ml-32 text-7xl font-secondary font-semibold mix-blend-difference mb-4">
           Prazer, sou o Renan
         </h2>
