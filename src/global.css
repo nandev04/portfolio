@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-grey-900: #0a0a0a;
+  --color-dark-grey-800: #171717;
+  --color-dark-grey-700: #272727;
+
+  --font-primary: "Fira Sans Condensed", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+  --font-tertiary: "Big Shoulders", sans-serif;
+  --font-signature: "Qwitcher Grypen", cursive;
+}
+
+@layer components {
+  .title-hero {
+    @apply font-semibold font-primary text-white;
+  }
+
+  .glow-orb {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 80%);
+    width: clamp(1.5rem, 40vw, 25rem);
+    height: clamp(1.5rem, 40vw, 25rem);
+    border-radius: 50%;
+    box-shadow:
+      0 0 40px 15px rgba(255, 255, 255, 0.35),
+      inset 0 0 20px 15px rgba(255, 255, 255, 0.4);
+  }
+
+  .title-section {
+    @apply font-tertiary font-extrabold text-[7rem];
+  }
+}
