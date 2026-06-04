@@ -13,7 +13,7 @@ const FrontendOptions = () => {
     <>
       <div className="grid gap-5 grid-cols-2 justify-between">
         <div className="flex ml-14 flex-col justify-center">
-          <h3 className="text-4xl font-default font-extrabold text-dark-grey-700">
+          <h3 className="text-5xl mb-4 font-default font-extrabold text-dark-grey-700">
             Technologies
           </h3>
           <div className="flex flex-wrap gap-4 max-w-full ml-8 mt-5">

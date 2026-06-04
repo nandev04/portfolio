@@ -12,7 +12,7 @@ const ToolsOptions = () => {
     <>
       <div className="grid gap-5 grid-cols-2 justify-between">
         <div className="flex ml-14 flex-col justify-center">
-          <h3 className="text-4xl font-default font-extrabold text-dark-grey-700">
+          <h3 className="text-5xl mb-4 font-default font-extrabold text-dark-grey-700">
             Tools
           </h3>
           <div className="flex flex-wrap gap-4 max-w-full ml-8 mt-5">
@@ -24,9 +24,9 @@ const ToolsOptions = () => {
             <CardTech Icon={SiPostman}>Postman</CardTech>
           </div>
         </div>
-        <div className="flex w-full justify-center">
+        <div className="flex w-full justify-center self-center">
           <img
-            className="w-full h-auto max-w-80 drop-shadow-md"
+            className="w-full h-auto drop-shadow-md max-w-80"
             src={ToolSvg}
             alt="Imagem representativa de frontend"
           />
