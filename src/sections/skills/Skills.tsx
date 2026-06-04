@@ -2,9 +2,14 @@ import { useState } from "react";
 import { FaTerminal } from "react-icons/fa";
 import ButtonStack from "./components/ButtonStack";
 import FrontendOptions from "./components/FrontendOptions";
+import ToolsOptions from "./components/ToolsOptions";
+import BackDevopsOptions from "./components/BackDevopsOptions";
+
+export type optionsStack = "backend" | "frontend" | "tools";
 
 const Skills = () => {
-  const [state, setState] = useState(null);
+  const [options, setOptions] = useState<optionsStack>("frontend");
+  console.log(options);
 
   return (
     <section className=" min-h-96 py-24 px-16 max-w-490 mx-auto">
@@ -15,13 +20,20 @@ const Skills = () => {
         </h2>
       </div>
       <div className="flex gap-6  justify-center">
-        <ButtonStack setState={setState}>Front-End</ButtonStack>
-        <ButtonStack setState={setState}>Back-End & Devops</ButtonStack>
-        <ButtonStack setState={setState}>Ferramentas</ButtonStack>
+        <ButtonStack setState={() => setOptions("frontend")}>
+          Front-End
+        </ButtonStack>
+        <ButtonStack setState={() => setOptions("backend")}>
+          Back-End & Devops
+        </ButtonStack>
+        <ButtonStack setState={() => setOptions("tools")}>
+          Ferramentas
+        </ButtonStack>
       </div>
-      <div className="mt-16 max-w-400 mx-auto">
-        {/* {!state && <BackDevopsOptions />} */}
-        {!state && <FrontendOptions />}
+      <div className="mt-16 max-w-400 mx-auto min-h-75">
+        {options === "backend" && <BackDevopsOptions />}
+        {options === "frontend" && <FrontendOptions />}
+        {options === "tools" && <ToolsOptions />}
       </div>
     </section>
   );

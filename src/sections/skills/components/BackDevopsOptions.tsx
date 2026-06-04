@@ -55,7 +55,7 @@ const BackDevopsOptions = () => {
           <img
             className="w-full h-auto max-w-100 drop-shadow-md"
             src={BackendSvg}
-            alt="Imagem representativa de frontend"
+            alt="Imagem representativa de backend"
           />
         </div>
       </div>
