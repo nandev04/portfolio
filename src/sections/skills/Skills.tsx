@@ -7,7 +7,7 @@ const Skills = () => {
   const [state, setState] = useState(null);
 
   return (
-    <section className=" min-h-96 py-24 px-16">
+    <section className=" min-h-96 py-24 px-16 max-w-490 mx-auto">
       <div className="flex items-center gap-4 mb-16">
         <FaTerminal className="w-15 h-15 text-dark-grey-800" />
         <h2 className="font-tertiary text-dark-grey-800 font-extrabold text-6xl uppercase">
@@ -19,7 +19,9 @@ const Skills = () => {
         <ButtonStack setState={setState}>Back-End & Devops</ButtonStack>
         <ButtonStack setState={setState}>Ferramentas</ButtonStack>
       </div>
-      <div className="mt-20">{!state && <BackDevopsOptions />}</div>
+      <div className="mt-16 max-w-400 mx-auto">
+        {!state && <BackDevopsOptions />}
+      </div>
     </section>
   );
 };
