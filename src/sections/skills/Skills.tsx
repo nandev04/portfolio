@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaTerminal } from "react-icons/fa";
 import ButtonStack from "./components/ButtonStack";
-import BackDevopsOptions from "./components/BackDevopsOptions";
+import FrontendOptions from "./components/FrontendOptions";
 
 const Skills = () => {
   const [state, setState] = useState(null);
@@ -20,7 +20,8 @@ const Skills = () => {
         <ButtonStack setState={setState}>Ferramentas</ButtonStack>
       </div>
       <div className="mt-16 max-w-400 mx-auto">
-        {!state && <BackDevopsOptions />}
+        {/* {!state && <BackDevopsOptions />} */}
+        {!state && <FrontendOptions />}
       </div>
     </section>
   );

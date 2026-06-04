@@ -14,7 +14,7 @@ import { SiJunit5 } from "react-icons/si";
 import { GrDocker } from "react-icons/gr";
 import { SiGithubactions } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-import FrontendSvg from "../assets/frontend.svg";
+import BackendSvg from "../assets/backend.svg";
 
 const BackDevopsOptions = () => {
   return (
@@ -53,8 +53,8 @@ const BackDevopsOptions = () => {
         </div>
         <div className="flex w-full justify-center pl-20">
           <img
-            className="w-full h-auto max-w-120 drop-shadow-md"
-            src={FrontendSvg}
+            className="w-full h-auto max-w-100 drop-shadow-md"
+            src={BackendSvg}
             alt="Imagem representativa de frontend"
           />
         </div>
