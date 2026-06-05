@@ -6,8 +6,8 @@ import shape from "../../../public/shapes/featured-project-shape.svg";
 
 const FeaturedProjects = () => {
   return (
-    <div className="relative min-h-300">
-      <img className="absolute top-0 w-full h-full opacity-2" src={shape} />
+    <div className="relative min-h-dvh box-border">
+      <img className="absolute top-0 w-full h-full opacity-5" src={shape} />
       <Section>
         <Subtitle>Featured Projects</Subtitle>
 
