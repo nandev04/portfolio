@@ -1,21 +1,23 @@
-🗂️ Portfólio Pessoal
+# 🗂️ Portfólio Pessoal
+
 Site de portfólio desenvolvido para apresentar meu perfil profissional, redes sociais, informações de contato e currículo.
-🚀 Tecnologias
 
-React + TypeScript
-Vite
-Tailwind CSS
-Framer Motion
-React Icons
-Headless UI
+## 🚀 Tecnologias
 
-📌 Funcionalidades
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Headless UI](https://headlessui.com/)
 
-Exibição de redes sociais profissionais (LinkedIn, GitHub)
-Seção de contato
-Download direto do currículo (CV)
+## 📌 Funcionalidades
 
-🔗 Links
+- Exibição de redes sociais profissionais (LinkedIn, GitHub)
+- Seção de contato
+- Download direto do currículo (CV)
 
-LinkedIn
-GitHub
+## 🔗 Links
+
+- [LinkedIn](https://linkedin.com/in/nandev04)
+- [GitHub](https://github.com/nandev04)
