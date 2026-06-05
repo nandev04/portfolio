@@ -7,6 +7,7 @@ import { SiReactrouter } from "react-icons/si";
 import { SiReactquery } from "react-icons/si";
 import { SiReacthookform } from "react-icons/si";
 import ZustandIcon from "./ui/ZustandIcon";
+import { SiTailwindcss } from "react-icons/si";
 
 const FrontendOptions = () => {
   return (
@@ -24,6 +25,7 @@ const FrontendOptions = () => {
             <CardTech Icon={SiReactquery}>TanStack Query</CardTech>
             <CardTech Icon={SiReacthookform}>React Hook Form</CardTech>
             <CardTech Icon={ZustandIcon}>Zustand</CardTech>
+            <CardTech Icon={SiTailwindcss}>Tailwind CSS</CardTech>
           </div>
         </div>
         <div className="flex w-full justify-center pl-20">
