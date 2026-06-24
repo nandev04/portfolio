@@ -1,9 +1,11 @@
 # 🗂️ Portfólio Pessoal
-
 Site de portfólio desenvolvido para apresentar meu perfil profissional, redes sociais, informações de contato e currículo.
 
-## 🚀 Tecnologias
+## 🎨 Design Reference
 
+![Portfolio Design](https://i.imgur.com/jz3ySsL.png)
+
+## 🚀 Tecnologias
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
@@ -12,12 +14,10 @@ Site de portfólio desenvolvido para apresentar meu perfil profissional, redes s
 - [Headless UI](https://headlessui.com/)
 
 ## 📌 Funcionalidades
-
 - Exibição de redes sociais profissionais (LinkedIn, GitHub)
 - Seção de contato
 - Download direto do currículo (CV)
 
 ## 🔗 Links
-
 - [LinkedIn](https://linkedin.com/in/nandev04)
 - [GitHub](https://github.com/nandev04)
