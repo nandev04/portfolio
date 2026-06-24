@@ -4,6 +4,7 @@ Site de portfólio desenvolvido para apresentar meu perfil profissional, redes s
 ## 🎨 Design Reference
 
 ![Portfolio Design](https://i.imgur.com/jz3ySsL.png)
+Os frames estão dispostos lado a lado representando o scroll horizontal da seção de projetos.
 
 ## 🚀 Tecnologias
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
