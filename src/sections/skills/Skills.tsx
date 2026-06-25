@@ -14,7 +14,7 @@ const Skills = () => {
   return (
     <Section>
       <Subtitle>Skills</Subtitle>
-      <div className="flex gap-6  justify-center">
+      <div className="flex gap-6 justify-center">
         <ButtonStack setState={() => setOptions("frontend")}>
           Front-End
         </ButtonStack>

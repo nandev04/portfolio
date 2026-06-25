@@ -7,11 +7,14 @@ import shape from "../../../public/shapes/featured-project-shape.svg";
 const FeaturedProjects = () => {
   return (
     <div className="relative min-h-dvh box-border">
-      <img className="absolute top-0 w-full h-full opacity-5" src={shape} />
+      <img
+        className="pointer-events-none absolute top-0 w-full h-full opacity-5"
+        src={shape}
+      />
       <Section>
         <Subtitle>Featured Projects</Subtitle>
 
-        <div className="ml-28 grid grid-cols-2 gap-6 max-w-280">
+        <div className="ml-28 mb-20 grid grid-cols-2 gap-6 max-w-280">
           <CardProject
             postLink="#"
             repoLink="#"
@@ -20,6 +23,11 @@ const FeaturedProjects = () => {
           />
           <CardProject repoLink="#" imgSrc={easylistImg} />
           <CardProject repoLink="#" imgSrc={easylistImg} />
+        </div>
+        <div className="absolute -right-20 pr-4 bg-dark-grey-900 rounded-2xl py-1">
+          <span className="ml-[-26%] font-quinary mix-blend-difference text-white uppercase">
+            Mais projetos na seção pinned no GitHub
+          </span>
         </div>
       </Section>
     </div>

@@ -10,11 +10,9 @@ const App = () => {
       <div className="sticky top-0 z-0">
         <Hero />
       </div>
-      <div className="relative z-10 bg-light-grey-default">
+      <div className="relative z-10 bg-light-grey-default shadow-[0_-32px_24px_rgba(0,0,0,.6)]">
         <About />
         <Skills />
-      </div>
-      <div className="relative z-20 bg-linear-to-b from-light-grey-default from-50% via-[#d7d7d7] via-80% to-dark-grey-900 to-110%">
         <FeaturedProjects />
       </div>
       <div className="relative z-20 bg-amber-300">
