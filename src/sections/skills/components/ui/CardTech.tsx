@@ -14,9 +14,9 @@ const CardTech = ({
 }) => {
   return (
     <div
-      className={`min-w-26 flex border gap-1 justify-center items-center rounded-2xl bg-[rgba(0,0,0,0.1)] px-5 py-1`}
+      className={`min-w-26 flex border gap-1 justify-center items-center rounded-2xl bg-[rgba(0,0,0,0.1)] px-5 py-1 whitespace-nowrap`}
     >
-      <span className="text-dark-grey-800 font-default font-semibold text-[1rem]">
+      <span className="text-dark-grey-800 font-default font-semibold text-[1rem] whitespace-nowrap">
         {children}
       </span>
       <Icon
