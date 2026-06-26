@@ -26,7 +26,7 @@ const Skills = () => {
             Ferramentas
           </ButtonStack>
         </div>
-        <div className="mt-16 max-w-400 mx-auto min-h-75 mb-46">
+        <div className="mt-16 max-w-400 mx-auto min-h-[60dvh] mb-20 box-border">
           {options === "backend" && <BackDevopsOptions />}
           {options === "frontend" && <FrontendOptions />}
           {options === "tools" && <ToolsOptions />}
