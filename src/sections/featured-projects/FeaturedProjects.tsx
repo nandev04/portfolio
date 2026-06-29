@@ -2,14 +2,13 @@ import Section from "../../components/ui/Section";
 import Subtitle from "../../components/ui/Subtitle";
 import CardProject from "./components/CardProject";
 import easylistImg from "./assets/easylist-img.png";
-import shape from "../../../public/shapes/featured-project-shape.svg";
 
 const FeaturedProjects = () => {
   return (
     <div className="relative min-h-dvh box-border">
       <img
         className="pointer-events-none absolute top-0 w-full h-full opacity-5"
-        src={shape}
+        src={"/shapes/featured-project-shape.svg"}
       />
       <Section>
         <Subtitle>Featured Projects</Subtitle>
