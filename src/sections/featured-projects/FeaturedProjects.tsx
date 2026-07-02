@@ -24,7 +24,7 @@ const FeaturedProjects = () => {
           <CardProject repoLink="#" imgSrc={easylistImg} />
         </div>
         <div className="absolute right-0 pr-4 bg-dark-grey-900 rounded-l-2xl py-1">
-          <span className="ml-[-26%] font-quinary mix-blend-difference text-white uppercase">
+          <span className="ml-[-26%] font-quinary mix-blend-difference text-white uppercase italic">
             Mais projetos na seção pinned no GitHub
           </span>
         </div>
