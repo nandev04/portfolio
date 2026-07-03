@@ -6,30 +6,40 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalContainer = ({
   children,
+  spanRef,
+  sectionARef,
 }: {
   children: ReactNode;
-  triggerRef: RefObject<HTMLSpanElement | null>;
+  sectionARef: RefObject<HTMLDivElement | null>;
+  spanRef: RefObject<HTMLSpanElement | null>;
 }) => {
   const containerRef = useRef(null);
 
   useLayoutEffect(() => {
-    const gsapCtx = gsap.context(() => {
-      gsap.to(containerRef.current, {
-        x: "-100vw",
-        ease: "none",
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: containerRef.current,
-          pin: true,
-          scrub: 0.8,
-          start: "bottom bottom",
-          end: "+=100%",
-          markers: true,
+          trigger: spanRef.current,
+          start: "bottom bottom", // gatilho: span encosta no fim da viewport
+          end: () => `+=${window.innerHeight}`,
+          pin: sectionARef.current, // seção A congela
+          pinSpacing: true,
+          scrub: true,
+          invalidateOnRefresh: true,
         },
       });
-    }, containerRef);
 
-    return () => gsapCtx.revert();
-  }, []);
+      tl.fromTo(
+        containerRef.current,
+        { yPercent: 100 }, // começa 100% abaixo, fora da tela
+        { yPercent: 0, ease: "none" }, // sobe até cobrir 100% da tela
+      );
+    });
+
+    return () => ctx.revert();
+  }, [sectionARef, spanRef]);
 
   return (
     <div ref={containerRef} className="">
