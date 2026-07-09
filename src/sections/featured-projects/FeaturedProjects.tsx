@@ -1,36 +1,40 @@
-import Section from "../../components/ui/Section";
 import Subtitle from "../../components/ui/Subtitle";
 import CardProject from "./components/CardProject";
 import easylistImg from "./assets/easylist-img.png";
-import shape from "../../../public/shapes/featured-project-shape.svg";
+import Carousel from "./components/Carousel";
 
 const FeaturedProjects = () => {
   return (
-    <div className="relative min-h-dvh box-border">
-      <img
-        className="pointer-events-none absolute top-0 w-full h-full opacity-5"
-        src={shape}
-      />
-      <Section>
-        <Subtitle>Featured Projects</Subtitle>
+    <section className="mt-40 h-screen">
+      <div className="max-w-490 mx-auto">
+        <div className="mx-16 mb-24">
+          <Subtitle>Featured Projects</Subtitle>
 
-        <div className="ml-28 mb-20 grid grid-cols-2 gap-6 max-w-280">
-          <CardProject
-            postLink="#"
-            repoLink="#"
-            imgSrc={easylistImg}
-            highlight
-          />
-          <CardProject repoLink="#" imgSrc={easylistImg} />
-          <CardProject repoLink="#" imgSrc={easylistImg} />
+          <div className="mx-auto gap-6 max-w-460">
+            <Carousel
+              slides={[
+                <CardProject
+                  postLink="#"
+                  repoLink="#"
+                  imgSrc={easylistImg}
+                  highlight
+                />,
+                <CardProject repoLink="#" imgSrc={easylistImg} />,
+                <CardProject repoLink="#" imgSrc={easylistImg} />,
+                <CardProject repoLink="#" imgSrc={easylistImg} />,
+              ]}
+            />
+          </div>
         </div>
-        <div className="absolute right-0 pr-4 bg-dark-grey-900 rounded-l-2xl py-1">
-          <span className="ml-[-26%] font-quinary mix-blend-difference text-white uppercase">
+      </div>
+      <div className="flex justify-end">
+        <div className="bg-dark-grey-900 rounded-l-2xl py-1 px-6 mb-60">
+          <span className="-ml-30 font-quinary mix-blend-difference text-white uppercase italic">
             Mais projetos na seção pinned no GitHub
           </span>
         </div>
-      </Section>
-    </div>
+      </div>
+    </section>
   );
 };
 

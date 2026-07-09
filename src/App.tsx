@@ -3,19 +3,23 @@ import Contact from "./sections/contact/Contact";
 import FeaturedProjects from "./sections/featured-projects/FeaturedProjects";
 import Hero from "./sections/hero/Hero";
 import Skills from "./sections/skills/Skills";
-
 const App = () => {
   return (
     <>
       <div className="sticky top-0 z-0">
         <Hero />
       </div>
+
       <div className="relative z-10 bg-light-grey-default shadow-[0_-32px_24px_rgba(0,0,0,.6)] overflow-hidden">
         <About />
         <Skills />
-        <FeaturedProjects />
-      </div>
-      <div className="relative z-20 bg-amber-300">
+        <div className="relative box-border">
+          <img
+            className="pointer-events-none absolute top-0 w-full h-full opacity-5"
+            src={"/shapes/featured-project-shape.svg"}
+          />
+          <FeaturedProjects />
+        </div>
         <Contact />
       </div>
     </>
