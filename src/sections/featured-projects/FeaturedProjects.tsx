@@ -1,23 +1,29 @@
 import Subtitle from "../../components/ui/Subtitle";
 import CardProject from "./components/CardProject";
 import easylistImg from "./assets/easylist-img.png";
+import Carousel from "./components/Carousel";
 
 const FeaturedProjects = () => {
   return (
-    <section className="mt-40">
-      <div className="min-h-96 max-w-490 mx-auto">
+    <section className="mt-40 h-screen">
+      <div className="max-w-490 mx-auto">
         <div className="mx-16 mb-24">
           <Subtitle>Featured Projects</Subtitle>
 
-          <div className="ml-28  grid grid-cols-2 gap-6 max-w-280">
-            <CardProject
-              postLink="#"
-              repoLink="#"
-              imgSrc={easylistImg}
-              highlight
+          <div className="mx-auto gap-6 max-w-460">
+            <Carousel
+              slides={[
+                <CardProject
+                  postLink="#"
+                  repoLink="#"
+                  imgSrc={easylistImg}
+                  highlight
+                />,
+                <CardProject repoLink="#" imgSrc={easylistImg} />,
+                <CardProject repoLink="#" imgSrc={easylistImg} />,
+                <CardProject repoLink="#" imgSrc={easylistImg} />,
+              ]}
             />
-            <CardProject repoLink="#" imgSrc={easylistImg} />
-            <CardProject repoLink="#" imgSrc={easylistImg} />
           </div>
         </div>
       </div>

@@ -22,10 +22,6 @@ const Contact = () => {
   return (
     <>
       <div className="relative bg-dark-grey-900 min-h-screen ">
-        <div className="relative">
-          <span className="absolute w-45 h-45 bg-dark-grey-900 rounded-full -top-15 -left-30"></span>
-          <span className="absolute -top-15 text-decoration">/CONTACT</span>
-        </div>
         <section
           className={`flex flex-col min-h-screen max-w-700 mx-auto self-center`}
         >
