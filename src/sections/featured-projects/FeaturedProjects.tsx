@@ -8,7 +8,7 @@ const FeaturedProjects = () => {
     <section className="mt-40 h-screen">
       <div className="max-w-490 mx-auto">
         <div className="mx-16 mb-24">
-          <Subtitle>Featured Projects</Subtitle>
+          <Subtitle>Projects</Subtitle>
 
           <div className="mx-auto gap-6 max-w-460">
             <Carousel
