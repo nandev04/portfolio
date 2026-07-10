@@ -13,6 +13,7 @@ const Skills = () => {
 
   const wrapperButtonsRef = useRef<HTMLDivElement | null>(null);
   const wrapperStackRef = useRef<HTMLDivElement | null>(null);
+  const wrapperSubtitleRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctxButtons = gsap.context(() => {
@@ -27,7 +28,7 @@ const Skills = () => {
           ease: "power2.out",
           scrollTrigger: {
             toggleActions: "play none none reverse",
-            start: "top 60%",
+            start: "top 90%",
             trigger: wrapperButtonsRef.current,
           },
         },
@@ -49,7 +50,7 @@ const Skills = () => {
           ease: "power2.out",
           scrollTrigger: {
             toggleActions: "play none none reverse",
-            start: "top 69%",
+            start: "top 80%",
             trigger: wrapperStackRef.current,
           },
         },
@@ -59,10 +60,31 @@ const Skills = () => {
     return () => ctxStack.revert();
   }, [options]);
 
+  useLayoutEffect(() => {
+    const ctxSubtitle = gsap.context(() => {
+      gsap.fromTo(
+        wrapperSubtitleRef.current,
+        { xPercent: -100 },
+        {
+          xPercent: 0,
+          scrollTrigger: {
+            start: "top bottom",
+            end: "top 80%",
+            scrub: 1.4,
+            trigger: wrapperSubtitleRef.current,
+            invalidateOnRefresh: true,
+          },
+        },
+      );
+    });
+
+    return () => ctxSubtitle.revert();
+  }, []);
+
   return (
     <>
       <section className="min-h-96 py-24 px-16 max-w-490 mx-auto">
-        <Subtitle>Skills</Subtitle>
+        <Subtitle ref={wrapperSubtitleRef}>Skills</Subtitle>
         <div ref={wrapperButtonsRef} className="flex gap-6 justify-center">
           <ButtonStack setState={() => setOptions("frontend")}>
             Front-End

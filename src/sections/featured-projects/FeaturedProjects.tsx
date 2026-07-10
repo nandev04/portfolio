@@ -2,15 +2,63 @@ import Subtitle from "../../components/ui/Subtitle";
 import CardProject from "./components/CardProject";
 import easylistImg from "./assets/easylist-img.png";
 import Carousel from "./components/Carousel";
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "../../config/gsap.config";
 
 const FeaturedProjects = () => {
+  const wrapperCarouselRef = useRef<HTMLDivElement>(null);
+  const subtitleRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctxCarousel = gsap.context(() => {
+      gsap.fromTo(
+        wrapperCarouselRef.current,
+        { yPercent: -5, opacity: 0 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            toggleActions: "play none none reverse",
+            start: "top 90%",
+            trigger: wrapperCarouselRef.current,
+          },
+        },
+      );
+    }, wrapperCarouselRef);
+
+    return () => ctxCarousel.revert();
+  }, []);
+
+  useLayoutEffect(() => {
+    const ctxSubtitle = gsap.context(() => {
+      gsap.fromTo(
+        subtitleRef.current,
+        { xPercent: -100 },
+        {
+          xPercent: 0,
+          scrollTrigger: {
+            start: "top bottom",
+            end: "top 80%",
+            scrub: 1.6,
+            trigger: subtitleRef.current,
+            invalidateOnRefresh: true,
+          },
+        },
+      );
+    });
+
+    return () => ctxSubtitle.revert();
+  }, []);
+
   return (
     <section className="mt-40 h-screen">
       <div className="max-w-490 mx-auto">
         <div className="mx-16 mb-24">
-          <Subtitle>Projects</Subtitle>
+          <Subtitle ref={subtitleRef}>Projects</Subtitle>
 
-          <div className="mx-auto gap-6 max-w-460">
+          <div ref={wrapperCarouselRef} className="mx-auto gap-6 max-w-460">
             <Carousel
               slides={[
                 <CardProject
