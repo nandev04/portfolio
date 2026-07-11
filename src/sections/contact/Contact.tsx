@@ -8,6 +8,7 @@ import {
 import { FaArrowCircleRight, FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { send } from "@emailjs/browser";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 const Contact = () => {
   const methods = useForm({
@@ -17,6 +18,7 @@ const Contact = () => {
 
   const onSubmitEmail = async (data: emailValidationType) => {
     try {
+      throw new Error();
       await send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -29,8 +31,11 @@ const Contact = () => {
       );
 
       return;
-    } catch (err: unknown) {
-      console.log(err);
+    } catch {
+      methods.setError("root", {
+        type: "manual",
+        message: "Ocorreu um erro ao enviar o formulário",
+      });
     }
   };
 
@@ -73,25 +78,29 @@ const Contact = () => {
                       label="Mensagem"
                       type="text"
                     />
+                    {methods.formState.errors.root?.message && (
+                      <span className="font-quinary ml-1  text-[0.875rem] text-red-400">
+                        {methods.formState.errors.root.message}
+                      </span>
+                    )}
                   </div>
 
-                  <div className="bg-dark-grey-800 rounded-3xl w-max ml-auto hover:bg-dark-grey-900">
-                    <button
-                      className="flex items-center font-secondary font-bold gap-3 ml-auto text-white mt-10 px-3 py-2 cursor-pointer"
-                      type="submit"
-                    >
-                      {methods.formState.isSubmitting ? (
-                        <>
-                          Enviando <FaArrowCircleRight className="text-white" />
-                        </>
-                      ) : (
-                        <>
-                          Enviar mensagem{" "}
-                          <FaArrowCircleRight className="text-white" />
-                        </>
-                      )}{" "}
-                    </button>
-                  </div>
+                  <button
+                    disabled={methods.formState.isSubmitting}
+                    className="flex items-center bg-dark-grey-800 hover:bg-dark-grey-900 rounded-3xl font-secondary font-bold gap-3 ml-auto text-white mt-10 px-3 py-2"
+                    type="submit"
+                  >
+                    {methods.formState.isSubmitting ? (
+                      <>
+                        Enviando <LoadingSpinner />
+                      </>
+                    ) : (
+                      <>
+                        Enviar mensagem{" "}
+                        <FaArrowCircleRight className="text-white" />
+                      </>
+                    )}{" "}
+                  </button>
                 </form>
               </FormProvider>
             </div>
