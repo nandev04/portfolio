@@ -31,8 +31,6 @@ const Contact = () => {
       );
 
       toast.success("Formulário enviado com sucesso");
-
-      return;
     } catch {
       methods.setError("root", {
         type: "manual",
