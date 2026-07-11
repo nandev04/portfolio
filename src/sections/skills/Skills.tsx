@@ -3,7 +3,7 @@ import ButtonStack from "./components/ButtonStack";
 import FrontendOptions from "./components/FrontendOptions";
 import ToolsOptions from "./components/ToolsOptions";
 import BackDevopsOptions from "./components/BackDevopsOptions";
-import Subtitle from "../../components/ui/Subtitle";
+import Subtitle from "../../components/Subtitle";
 import { gsap } from "../../config/gsap.config";
 
 export type optionsStack = "backend" | "frontend" | "tools";

@@ -46,7 +46,7 @@ const InputLabel = ({
       )}
 
       {error[registerName] && (
-        <span className="italic font-quinary ml-2 mt-0.5 text-[0.875rem] text-red-600">
+        <span className="font-quinary ml-2 mt-0.5 text-[0.875rem] text-red-400">
           {error[registerName].message}
         </span>
       )}
