@@ -9,6 +9,7 @@ import { FaArrowCircleRight, FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { send } from "@emailjs/browser";
 import LoadingSpinner from "./components/LoadingSpinner";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const methods = useForm({
@@ -18,7 +19,6 @@ const Contact = () => {
 
   const onSubmitEmail = async (data: emailValidationType) => {
     try {
-      throw new Error();
       await send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -29,6 +29,8 @@ const Contact = () => {
           email: data.email,
         },
       );
+
+      toast.success("Formulário enviado com sucesso");
 
       return;
     } catch {
@@ -43,7 +45,7 @@ const Contact = () => {
     <>
       <div className="relative bg-dark-grey-900 min-h-screen ">
         <section
-          className={`flex flex-col min-h-screen max-w-700 mx-auto self-center`}
+          className={`flex flex-col min-h-screen max-w-700 mx-auto self-center relative`}
         >
           <div className="py-24 px-16 mt-auto">
             <div className="bg-white w-full max-w-5xl py-10 px-11 mx-auto rounded-2xl">
@@ -106,7 +108,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="flex gap-2 justify-start pl-5 pb-2 h-10 mt-auto">
+          <div className="flex gap-2 justify-end pr-5 pb-2 h-10 mt-auto">
             <a
               href="https://github.com/nandev04"
               aria-label="Github"
@@ -130,6 +132,7 @@ const Contact = () => {
               />
             </a>
           </div>
+          <span className="absolute -top-15 text-decoration">/CONTACT</span>
         </section>
       </div>
     </>

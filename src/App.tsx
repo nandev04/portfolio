@@ -4,11 +4,19 @@ import FeaturedProjects from "./sections/featured-projects/FeaturedProjects";
 import Hero from "./sections/hero/Hero";
 import Skills from "./sections/skills/Skills";
 import { emailInit } from "./config/emailjs.config";
+import { Toaster } from "react-hot-toast";
 const App = () => {
   emailInit();
 
   return (
     <>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          className: "font-secondary text-[.925rem]",
+        }}
+      />
       <div className="sticky top-0 z-0">
         <Hero />
       </div>

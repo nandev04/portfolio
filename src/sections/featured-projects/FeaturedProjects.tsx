@@ -1,4 +1,4 @@
-import Subtitle from "../../components/ui/Subtitle";
+import Subtitle from "../../components/Subtitle";
 import CardProject from "./components/CardProject";
 import easylistImg from "./assets/easylist-img.png";
 import Carousel from "./components/Carousel";
