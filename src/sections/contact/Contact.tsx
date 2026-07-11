@@ -7,6 +7,7 @@ import {
 } from "./schema/emailValidation";
 import { FaArrowCircleRight, FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
+import { send } from "@emailjs/browser";
 
 const Contact = () => {
   const methods = useForm({
@@ -14,9 +15,23 @@ const Contact = () => {
     mode: "onSubmit",
   });
 
-  const onSubmitEmail = (data: emailValidationType) => {
-    console.log(data);
-    return;
+  const onSubmitEmail = async (data: emailValidationType) => {
+    try {
+      await send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: data.name,
+          message: data.message,
+          subject: data.subject,
+          email: data.email,
+        },
+      );
+
+      return;
+    } catch (err: unknown) {
+      console.log(err);
+    }
   };
 
   return (
@@ -65,8 +80,16 @@ const Contact = () => {
                       className="flex items-center font-secondary font-bold gap-3 ml-auto text-white mt-10 px-3 py-2 cursor-pointer"
                       type="submit"
                     >
-                      Enviar mensagem{" "}
-                      <FaArrowCircleRight className="text-white" />
+                      {methods.formState.isSubmitting ? (
+                        <>
+                          Enviando <FaArrowCircleRight className="text-white" />
+                        </>
+                      ) : (
+                        <>
+                          Enviar mensagem{" "}
+                          <FaArrowCircleRight className="text-white" />
+                        </>
+                      )}{" "}
                     </button>
                   </div>
                 </form>

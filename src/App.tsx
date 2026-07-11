@@ -3,7 +3,10 @@ import Contact from "./sections/contact/Contact";
 import FeaturedProjects from "./sections/featured-projects/FeaturedProjects";
 import Hero from "./sections/hero/Hero";
 import Skills from "./sections/skills/Skills";
+import { emailInit } from "./config/emailjs.config";
 const App = () => {
+  emailInit();
+
   return (
     <>
       <div className="sticky top-0 z-0">
