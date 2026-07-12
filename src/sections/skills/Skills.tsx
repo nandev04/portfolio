@@ -5,6 +5,7 @@ import ToolsOptions from "./components/ToolsOptions";
 import BackDevopsOptions from "./components/BackDevopsOptions";
 import Subtitle from "../../components/Subtitle";
 import { gsap } from "../../config/gsap.config";
+import DropdownMenuComponent from "./components/DropdownMenuComponent";
 
 export type optionsStack = "backend" | "frontend" | "tools";
 
@@ -85,7 +86,13 @@ const Skills = () => {
     <>
       <section className="min-h-96 py-24 px-8 md:px-16 max-w-490 mx-auto">
         <Subtitle ref={wrapperSubtitleRef}>Skills</Subtitle>
-        <div ref={wrapperButtonsRef} className="flex gap-6 justify-center">
+        <div className="flex md:hidden justify-end">
+          <DropdownMenuComponent value={options} onChange={setOptions} />
+        </div>
+        <div
+          ref={wrapperButtonsRef}
+          className="hidden md:flex gap-6 justify-center"
+        >
           <ButtonStack setState={() => setOptions("frontend")}>
             Front-End
           </ButtonStack>
