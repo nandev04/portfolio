@@ -12,11 +12,11 @@ const About = () => {
         {
           yPercent: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 1,
           ease: "power2.out",
           scrollTrigger: {
             toggleActions: "play none none reverse",
-            start: "top 95%",
+            start: "top 87%",
             trigger: wrapperRef.current,
           },
         },
@@ -28,8 +28,8 @@ const About = () => {
 
   return (
     <section className="pt-12 ">
-      <div className="bg-dark-grey-800 bg-about-shape bg-cover bg-center bg-no-repeat rounded-l-2xl ml-50 min-h-80 p-8">
-        <h2 className=" text-white -ml-32 text-7xl font-secondary font-semibold mix-blend-difference mb-4">
+      <div className="bg-dark-grey-800 bg-about-shape bg-cover bg-center bg-no-repeat rounded-l-2xl md:ml-50 min-h-80 p-8 ml-22">
+        <h2 className=" text-white -ml-24 text-[clamp(3rem,6vw,4.5rem)] font-secondary font-semibold mix-blend-difference mb-4 md:-ml-32">
           Prazer, sou o Renan
         </h2>
         <p ref={wrapperRef} className="font-secondary text-white font-normal">
