@@ -83,7 +83,7 @@ const Skills = () => {
 
   return (
     <>
-      <section className="min-h-96 py-24 px-16 max-w-490 mx-auto">
+      <section className="min-h-96 py-24 px-8 md:px-16 max-w-490 mx-auto">
         <Subtitle ref={wrapperSubtitleRef}>Skills</Subtitle>
         <div ref={wrapperButtonsRef} className="flex gap-6 justify-center">
           <ButtonStack setState={() => setOptions("frontend")}>

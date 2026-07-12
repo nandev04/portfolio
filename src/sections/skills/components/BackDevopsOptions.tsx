@@ -1,5 +1,5 @@
 import React from "react";
-import CardTech from "./ui/CardTech";
+import CardTech from "./CardTech";
 import { FaNodeJs } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
 import { SiSpring } from "react-icons/si";

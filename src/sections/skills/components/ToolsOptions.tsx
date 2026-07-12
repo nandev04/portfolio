@@ -1,4 +1,4 @@
-import CardTech from "./ui/CardTech";
+import CardTech from "./CardTech";
 import { FaGitAlt } from "react-icons/fa6";
 import { SiJira } from "react-icons/si";
 import { CgFigma } from "react-icons/cg";
