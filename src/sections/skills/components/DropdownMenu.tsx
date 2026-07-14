@@ -32,7 +32,7 @@ const DropdownMenu = ({
         <MenuItems
           transition
           modal={false}
-          className="absolute top-0 right-0 z-50 w-52 origin-top-right rounded-3xl bg-dark-grey-800 p-4 pt-5 text-sm text-white shadow-lg focus:outline-none transition ease-out data-closed:scale-90 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150"
+          className="absolute top-0 right-0 z-50 w-52 origin-top-right rounded-3xl bg-dark-grey-800 p-4.5 pt-5 text-sm text-white shadow-lg focus:outline-none transition ease-out data-closed:scale-90 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150"
         >
           <MenuItem>
             {({ close }) => (
@@ -48,39 +48,39 @@ const DropdownMenu = ({
 
           <div className="my-1.5">
             <MenuItem>
-              <span
+              <button
                 onClick={() => setState("frontend")}
-                className="flex gap-1.5 items-center rounded-md px-2.5 py-3 data-focus:bg-white/10"
+                className="flex w-full gap-1.5 items-center rounded-md px-2.5 py-3 data-focus:bg-white/10"
               >
                 <MdScreenshotMonitor />
                 Front-End
                 {option === "frontend" && (
                   <FaCheck className="ml-auto opacity-20 size-2.5" />
                 )}
-              </span>
+              </button>
             </MenuItem>
 
-            <MenuSeparator className="w-[90%] my-1 mx-auto h-px bg-white opacity-10" />
+            <MenuSeparator className="w-full my-1 mx-auto h-px bg-white opacity-10" />
 
             <MenuItem>
-              <span
+              <button
                 onClick={() => setState("backend")}
-                className="flex gap-1.5 items-center rounded-md px-2.5 py-2 data-focus:bg-white/10"
+                className="flex w-full gap-1.5 items-center rounded-md px-2.5 py-2 data-focus:bg-white/10"
               >
                 <HiMiniServerStack />
                 Back-End
                 {option === "backend" && (
                   <FaCheck className="ml-auto opacity-20 size-2.5" />
                 )}
-              </span>
+              </button>
             </MenuItem>
 
-            <MenuSeparator className="w-[90%] my-1 mx-auto h-px bg-white opacity-10" />
+            <MenuSeparator className="w-full my-1 mx-auto h-px bg-white opacity-10" />
 
             <MenuItem>
-              <span
+              <button
                 onClick={() => setState("tools")}
-                className="flex gap-1.5 items-center rounded-md px-2.5 py-2 data-focus:bg-white/10"
+                className="flex w-full gap-1.5 items-center rounded-md px-2.5 py-2 data-focus:bg-white/10"
               >
                 <FaTools />
                 Ferramentas
@@ -90,7 +90,7 @@ const DropdownMenu = ({
                     opacity={20}
                   />
                 )}
-              </span>
+              </button>
             </MenuItem>
           </div>
         </MenuItems>
