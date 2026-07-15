@@ -45,6 +45,9 @@ const Contact = () => {
         <section
           className={`flex flex-col min-h-screen max-w-700 mx-auto self-center relative`}
         >
+          <span className="absolute top-0 -translate-y-1/2 text-decoration">
+            /CONTACT
+          </span>
           <div className="py-24 px-16 mt-auto">
             <div className="bg-white w-full max-w-5xl py-10 px-11 mx-auto rounded-2xl">
               <FormProvider {...methods}>
@@ -130,7 +133,6 @@ const Contact = () => {
               />
             </a>
           </div>
-          <span className="absolute -top-15 text-decoration">/CONTACT</span>
         </section>
       </div>
     </>

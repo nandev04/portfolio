@@ -1,11 +1,11 @@
-import CardTech from "./ui/CardTech";
+import CardTech from "./CardTech";
 import { RiJavascriptFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { SiReactrouter } from "react-icons/si";
 import { SiReactquery } from "react-icons/si";
 import { SiReacthookform } from "react-icons/si";
-import ZustandIcon from "./ui/ZustandIcon";
+import ZustandIcon from "./ZustandIcon";
 import { SiTailwindcss } from "react-icons/si";
 import OptionsTopics from "./OptionsTopics";
 

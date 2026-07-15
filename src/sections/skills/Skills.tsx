@@ -5,6 +5,7 @@ import ToolsOptions from "./components/ToolsOptions";
 import BackDevopsOptions from "./components/BackDevopsOptions";
 import Subtitle from "../../components/Subtitle";
 import { gsap } from "../../config/gsap.config";
+import DropdownMenu from "./components/DropdownMenu";
 
 export type optionsStack = "backend" | "frontend" | "tools";
 
@@ -14,6 +15,12 @@ const Skills = () => {
   const wrapperButtonsRef = useRef<HTMLDivElement | null>(null);
   const wrapperStackRef = useRef<HTMLDivElement | null>(null);
   const wrapperSubtitleRef = useRef(null);
+
+  const stack: Record<optionsStack, Record<string, string>> = {
+    frontend: { label: "Front-End" },
+    backend: { label: "Back-End" },
+    tools: { label: "Ferramentas" },
+  };
 
   useLayoutEffect(() => {
     const ctxButtons = gsap.context(() => {
@@ -83,31 +90,39 @@ const Skills = () => {
 
   return (
     <>
-      <section className="min-h-96 py-24 px-16 max-w-490 mx-auto">
-        <Subtitle ref={wrapperSubtitleRef}>Skills</Subtitle>
-        <div ref={wrapperButtonsRef} className="flex gap-6 justify-center">
-          <ButtonStack setState={() => setOptions("frontend")}>
-            Front-End
-          </ButtonStack>
-          <ButtonStack setState={() => setOptions("backend")}>
-            Back-End & Devops
-          </ButtonStack>
-          <ButtonStack setState={() => setOptions("tools")}>
-            Ferramentas
-          </ButtonStack>
-        </div>
-        <div className="mt-16 max-w-400 mx-auto min-h-[60dvh] mb-20 box-border">
-          <div ref={wrapperStackRef}>
-            {options === "frontend" && <FrontendOptions />}
-            {options === "backend" && <BackDevopsOptions />}
-            {options === "tools" && <ToolsOptions />}
+      <section className="min-h-96 max-w-490 mx-auto">
+        <div className="py-24 px-8 md:px-16">
+          <Subtitle ref={wrapperSubtitleRef}>Skills</Subtitle>
+          <div className="flex md:hidden justify-end">
+            <DropdownMenu option={options} setState={setOptions} />
+          </div>
+          <div
+            ref={wrapperButtonsRef}
+            className="hidden md:flex gap-6 justify-center"
+          >
+            {(Object.entries(stack) as [optionsStack, { label: string }][]).map(
+              ([key, { label }]) => (
+                <ButtonStack key={key} setState={() => setOptions(key)}>
+                  {label}
+                </ButtonStack>
+              ),
+            )}
+          </div>
+          <div className="mt-10 md:mt-16 max-w-400 mx-auto mb-20 box-border">
+            <div ref={wrapperStackRef}>
+              {options === "frontend" && <FrontendOptions />}
+              {options === "backend" && <BackDevopsOptions />}
+              {options === "tools" && <ToolsOptions />}
+            </div>
           </div>
         </div>
-        <div className="absolute right-0">
-          <div className="relative">
-            <span className="absolute w-36 h-36 bg-dark-grey-900 rounded-full right-[-8%] top-[-60%]"></span>
-            <span className="text-decoration">/TECHNOLOGY</span>
-          </div>
+
+        <div className="relative text-[clamp(2rem,18vw,8rem)] leading-none mt-40">
+          <span className="absolute w-[1.4em] h-[1.4em] bg-dark-grey-900 rounded-full right-[-0.55em] top-[-0.8em]" />
+
+          <span className="flex w-full text-decoration justify-end">
+            /TECHNOLOGY
+          </span>
         </div>
       </section>
     </>

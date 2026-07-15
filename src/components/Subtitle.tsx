@@ -9,9 +9,9 @@ const Subtitle = ({
   ref?: RefObject<null>;
 }) => {
   return (
-    <div ref={ref} className="flex items-center gap-4 mb-16">
-      <FaTerminal className="w-15 h-15 text-dark-grey-800" />
-      <h2 className="font-tertiary text-dark-grey-800 font-extrabold text-6xl uppercase">
+    <div ref={ref}>
+      <h2 className="flex items-center gap-4 mb-16 font-tertiary text-dark-grey-800 font-extrabold text-[clamp(2.75rem,2.92vw+1.42rem,3.75rem)] uppercase">
+        <FaTerminal className="w-[1em] h-[1em] text-dark-grey-800" />
         {children}
       </h2>
     </div>

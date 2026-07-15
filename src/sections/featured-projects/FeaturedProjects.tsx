@@ -23,6 +23,7 @@ const FeaturedProjects = () => {
             toggleActions: "play none none reverse",
             start: "top 90%",
             trigger: wrapperCarouselRef.current,
+            invalidateOnRefresh: true,
           },
         },
       );
@@ -53,9 +54,9 @@ const FeaturedProjects = () => {
   }, []);
 
   return (
-    <section className="mt-40 h-screen">
+    <section className="mt-40">
       <div className="max-w-490 mx-auto">
-        <div className="mx-16 mb-24">
+        <div className="mx-8 mb-24 md:mx-16 md:mb-24">
           <Subtitle ref={subtitleRef}>Projects</Subtitle>
 
           <div ref={wrapperCarouselRef} className="mx-auto gap-6 max-w-460">
@@ -76,8 +77,8 @@ const FeaturedProjects = () => {
         </div>
       </div>
       <div className="flex justify-end">
-        <div className="bg-dark-grey-900 rounded-l-2xl py-1 px-6 mb-60">
-          <span className="-ml-30 font-quinary mix-blend-difference text-white uppercase italic">
+        <div className="bg-dark-grey-900 rounded-l-2xl py-1 px-4 md:px-4  mb-70">
+          <span className="-ml-30 font-quinary mix-blend-difference text-white uppercase italic text-[clamp(0.75rem,2.5vw,1.25rem)] ">
             Mais projetos na seção pinned no GitHub
           </span>
         </div>

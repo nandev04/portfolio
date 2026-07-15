@@ -25,7 +25,8 @@
   }
 
   .text-decoration {
-    @apply font-senary text-white mix-blend-difference text-9xl;
+    @apply font-senary text-white mix-blend-difference;
+    font-size: clamp(2rem, 18vw, 8rem);
   }
 
   .glow-cards {
