@@ -17,21 +17,22 @@ const App = () => {
           className: "font-secondary text-[.925rem]",
         }}
       />
-      <div className="sticky top-0 z-0">
-        <Hero />
-      </div>
-
-      <div className="relative z-10 bg-light-grey-default shadow-[0_-32px_24px_rgba(0,0,0,.6)] overflow-hidden">
-        <About />
-        <Skills />
-        <div className="relative box-border">
-          <img
-            className="pointer-events-none absolute top-0 w-full h-full opacity-5"
-            src={"/shapes/featured-project-shape.svg"}
-          />
-          <FeaturedProjects />
+      <div className="bg-[#1a1a1a]">
+        <div className="sticky top-0 z-0">
+          <Hero />
         </div>
-        <Contact />
+        <div className="relative z-10 bg-light-grey-default shadow-[0_-32px_24px_rgba(0,0,0,.6)] overflow-hidden max-w-800 mx-auto">
+          <About />
+          <Skills />
+          <div className="relative box-border">
+            <img
+              className="pointer-events-none absolute top-0 w-full h-full opacity-5"
+              src={"/shapes/featured-project-shape.svg"}
+            />
+            <FeaturedProjects />
+          </div>
+          <Contact />
+        </div>
       </div>
     </>
   );
