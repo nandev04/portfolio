@@ -43,7 +43,7 @@ const Contact = () => {
     <>
       <div className="relative bg-dark-grey-900 min-h-screen ">
         <section
-          className={`flex flex-col min-h-screen max-w-700 mx-auto self-center relative`}
+          className={`flex flex-col min-h-screen max-w-800 mx-auto self-center relative`}
         >
           <span className="absolute top-0 -translate-y-1/2 text-decoration">
             /CONTACT

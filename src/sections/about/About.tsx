@@ -34,7 +34,7 @@ const About = () => {
         </h2>
         <p
           ref={wrapperRef}
-          className="font-secondary text-white font-normal mb-14"
+          className="font-secondary text-white font-normal mb-14 max-w-600"
         >
           Desde cedo me interesso por tecnologia, essa curiosidade foi crescendo
           e me levou para o desenvolvimento, onde fui descobrindo que gosto

@@ -151,15 +151,17 @@ const Skills = () => {
             </div>
           </div>
         </div>
-
-        <div className="relative text-[clamp(2rem,18vw,8rem)] leading-none mt-40">
-          <span className="absolute w-[1.4em] h-[1.4em] bg-dark-grey-900 rounded-full right-[-0.55em] top-[-0.8em]" />
-
-          <span className="flex w-full text-decoration justify-end">
-            /TECHNOLOGY
-          </span>
-        </div>
       </section>
+      <div className="relative text-[clamp(2rem,18vw,8rem)] leading-none mt-40">
+        <span className="absolute w-[1.4em] h-[1.4em] bg-dark-grey-900 rounded-full right-[-0.55em] top-[-0.8em]" />
+
+        <span
+          aria-hidden={true}
+          className="flex w-full text-decoration justify-end"
+        >
+          /TECHNOLOGY
+        </span>
+      </div>
     </>
   );
 };
