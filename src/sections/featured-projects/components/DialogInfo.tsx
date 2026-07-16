@@ -35,10 +35,11 @@ const DialogInfo = ({
             <DialogPanel className="w-full relative isolate border bg-[#f9f9f9] p-6 sm:p-12 rounded-2xl sm:rounded-3xl max-h-[90vh] overflow-y-auto">
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="min-[612px]:flex items-end">
-                  <DialogTitle
-                    className="relative font-senary text-3xl sm:text-5xl ml-4 sm:ml-5 mix-blend-difference text-[#dfdfdf] before:content-[''] before:absolute before:left-0.5 before:bottom-2 sm:before:bottom-3.5 before:translate-y-1/2
-              before:-translate-x-1/2 before:h-2.5 sm:before:h-4 before:w-2.5 sm:before:w-4 before:bg-[#dfdfdf] before:rounded-full before:mix-blend-difference"
-                  >
+                  <DialogTitle className="relative font-senary text-3xl sm:text-5xal ml-4 sm:ml-5 mix-blend-difference text-[#dfdfdf]">
+                    <span
+                      aria-hidden="true"
+                      className="absolute left-0.5 bottom-2 translate-y-1/2 -translate-x-1/2 h-2.5 w-2.5 bg-[#dfdfdf] rounded-full mix-blend-difference"
+                    />
                     {title}
                   </DialogTitle>
                   <p className="font-quinary align-bottom mt-1.5 ml-1.5 italic text-[12px] min-[612px]:my-1.5 min-[612px]:mt-0">
