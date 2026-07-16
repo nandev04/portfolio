@@ -10,7 +10,7 @@ Os frames estão dispostos lado a lado representando o scroll horizontal da seç
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
+- [GSAP](https://gsap.com/).
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Headless UI](https://headlessui.com/)
 
