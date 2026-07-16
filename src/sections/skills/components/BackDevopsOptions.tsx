@@ -1,4 +1,3 @@
-import React from "react";
 import CardTech from "./CardTech";
 import { FaNodeJs } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
