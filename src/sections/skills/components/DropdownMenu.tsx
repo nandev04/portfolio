@@ -22,11 +22,11 @@ const DropdownMenu = ({
     <Menu>
       <div className="relative">
         <MenuButton className="rounded-4xl bg-dark-grey-800 px-4 py-2 text-sm font-medium text-white shadow-md h-9 data-hover:bg-dark-grey-800 data-open:bg-dark-grey-800">
-          <div className="flex gap-5.5 w-full h-full">
-            {option === "frontend" && <MdScreenshotMonitor size={"100%"} />}
-            {option === "backend" && <HiMiniServerStack size={"100%"} />}
-            {option === "tools" && <FaTools size={"100%"} />}
-            <FaChevronDown size={"100%"} />
+          <div className="flex gap-5.5 items-center h-full">
+            {option === "frontend" && <MdScreenshotMonitor size={20} />}
+            {option === "backend" && <HiMiniServerStack size={20} />}
+            {option === "tools" && <FaTools size={20} />}
+            <FaChevronDown size={16} />
           </div>
         </MenuButton>
         <MenuItems
