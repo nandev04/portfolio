@@ -48,7 +48,7 @@ const Contact = () => {
           <span className="absolute top-0 -translate-y-1/2 text-decoration">
             /CONTACT
           </span>
-          <div className="py-24 px-16 mt-auto">
+          <div className="py-24 px-10 sm:px-16 mt-auto">
             <div className="bg-white w-full max-w-5xl py-6 px-6 sm:py-10 sm:px-11 mx-auto rounded-2xl">
               <FormProvider {...methods}>
                 <form noValidate onSubmit={methods.handleSubmit(onSubmitEmail)}>
@@ -112,11 +112,12 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="flex gap-2 justify-end pr-5 pb-2 h-10 mt-auto">
+          <div className="flex gap-3 justify-end pr-5 pb-2 mt-auto">
             <a
               href="https://github.com/nandev04"
               aria-label="Github"
               target="_blank"
+              className="w-7 h-7 sm:w-8 sm:h-8"
             >
               <FaGithub
                 aria-hidden={true}
@@ -128,6 +129,7 @@ const Contact = () => {
               href="https://www.linkedin.com/in/nandev04/"
               aria-label="LinkedIn"
               target="_blank"
+              className="w-7 h-7 sm:w-8 sm:h-8"
             >
               <FaLinkedinIn
                 aria-hidden={true}

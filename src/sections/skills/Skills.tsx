@@ -13,6 +13,7 @@ const Skills = () => {
   const [options, setOptions] = useState<optionsStack>("frontend");
 
   const wrapperButtonsRef = useRef<HTMLDivElement | null>(null);
+  const wrapperDropdownRef = useRef<HTMLDivElement | null>(null);
   const wrapperStackRef = useRef<HTMLDivElement | null>(null);
   const wrapperSubtitleRef = useRef(null);
   const isFirstOptionsRun = useRef(true);
@@ -44,6 +45,28 @@ const Skills = () => {
     }, wrapperButtonsRef);
 
     return () => ctxButtons.revert();
+  }, []);
+
+  useLayoutEffect(() => {
+    const ctxDropdown = gsap.context(() => {
+      gsap.fromTo(
+        wrapperDropdownRef.current,
+        { xPercent: 100, opacity: 0 },
+        {
+          xPercent: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            toggleActions: "play none none reverse",
+            start: "top 90%",
+            trigger: wrapperDropdownRef.current,
+          },
+        },
+      );
+    }, wrapperDropdownRef);
+
+    return () => ctxDropdown.revert();
   }, []);
 
   useLayoutEffect(() => {
@@ -102,7 +125,10 @@ const Skills = () => {
       <section className="min-h-96 max-w-490 mx-auto">
         <div className="py-24 px-8 md:px-16">
           <Subtitle ref={wrapperSubtitleRef}>Skills</Subtitle>
-          <div className="flex md:hidden justify-end">
+          <div
+            ref={wrapperDropdownRef}
+            className="relative z-50 flex md:hidden justify-end"
+          >
             <DropdownMenu option={options} setState={setOptions} />
           </div>
           <div
