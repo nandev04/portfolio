@@ -32,7 +32,7 @@ const DialogInfo = ({
       >
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4 sm:p-10 bg-[rgba(0,0,0,0.7)]">
           <div className="relative w-full max-w-5xl">
-            <DialogPanel className="w-full relative border bg-[#f9f9f9] p-6 sm:p-12 rounded-2xl sm:rounded-3xl max-h-[90vh] overflow-y-auto">
+            <DialogPanel className="w-full relative isolate border bg-[#f9f9f9] p-6 sm:p-12 rounded-2xl sm:rounded-3xl max-h-[90vh] overflow-y-auto">
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="min-[612px]:flex items-end">
                   <DialogTitle
