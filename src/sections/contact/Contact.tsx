@@ -49,7 +49,7 @@ const Contact = () => {
             /CONTACT
           </span>
           <div className="py-24 px-16 mt-auto">
-            <div className="bg-white w-full max-w-5xl py-10 px-11 mx-auto rounded-2xl">
+            <div className="bg-white w-full max-w-5xl py-6 px-6 sm:py-10 sm:px-11 mx-auto rounded-2xl">
               <FormProvider {...methods}>
                 <form noValidate onSubmit={methods.handleSubmit(onSubmitEmail)}>
                   <div className="flex flex-col gap-3">
@@ -90,16 +90,19 @@ const Contact = () => {
 
                   <button
                     disabled={methods.formState.isSubmitting}
-                    className="flex items-center bg-dark-grey-800 hover:bg-dark-grey-900 rounded-3xl font-secondary font-bold gap-3 ml-auto text-white mt-10 px-3 py-2"
+                    className="flex items-center bg-dark-grey-800 hover:bg-dark-grey-900 rounded-3xl font-secondary font-bold gap-3 ml-auto text-white mt-5 sm:mt-10 px-5 sm:px-3 py-2"
                     type="submit"
                   >
                     {methods.formState.isSubmitting ? (
                       <>
-                        Enviando <LoadingSpinner />
+                        <span className="hidden sm:inline">Enviando</span>
+                        <LoadingSpinner />
                       </>
                     ) : (
                       <>
-                        Enviar mensagem{" "}
+                        <span className="hidden sm:inline">
+                          Enviar mensagem
+                        </span>
                         <FaArrowCircleRight className="text-white" />
                       </>
                     )}{" "}

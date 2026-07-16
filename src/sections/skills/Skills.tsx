@@ -4,7 +4,7 @@ import FrontendOptions from "./components/FrontendOptions";
 import ToolsOptions from "./components/ToolsOptions";
 import BackDevopsOptions from "./components/BackDevopsOptions";
 import Subtitle from "../../components/Subtitle";
-import { gsap } from "../../config/gsap.config";
+import { gsap, ScrollTrigger } from "../../config/gsap.config";
 import DropdownMenu from "./components/DropdownMenu";
 
 export type optionsStack = "backend" | "frontend" | "tools";
@@ -15,6 +15,7 @@ const Skills = () => {
   const wrapperButtonsRef = useRef<HTMLDivElement | null>(null);
   const wrapperStackRef = useRef<HTMLDivElement | null>(null);
   const wrapperSubtitleRef = useRef(null);
+  const isFirstOptionsRun = useRef(true);
 
   const stack: Record<optionsStack, Record<string, string>> = {
     frontend: { label: "Front-End" },
@@ -65,6 +66,14 @@ const Skills = () => {
     }, wrapperStackRef);
 
     return () => ctxStack.revert();
+  }, [options]);
+
+  useLayoutEffect(() => {
+    if (isFirstOptionsRun.current) {
+      isFirstOptionsRun.current = false;
+      return;
+    }
+    ScrollTrigger.refresh();
   }, [options]);
 
   useLayoutEffect(() => {
