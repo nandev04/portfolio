@@ -12,47 +12,67 @@ const FeaturedProjects = () => {
   const subtitleRef = useRef(null);
 
   useLayoutEffect(() => {
-    const ctxCarousel = gsap.context(() => {
-      gsap.fromTo(
-        wrapperCarouselRef.current,
-        { yPercent: -10, opacity: 0 },
-        {
-          yPercent: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            toggleActions: "play none none reverse",
-            start: "10% 78%",
-            trigger: wrapperCarouselRef.current,
-            invalidateOnRefresh: true,
-          },
-        },
-      );
-    }, wrapperCarouselRef);
+    const mm = gsap.matchMedia();
 
-    return () => ctxCarousel.revert();
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean };
+
+        gsap.fromTo(
+          wrapperCarouselRef.current,
+          { yPercent: -10, opacity: 0 },
+          {
+            yPercent: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              toggleActions: "play none none reverse",
+              start: isMobile ? "10% 58%" : "10% 78%",
+              trigger: wrapperCarouselRef.current,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   useLayoutEffect(() => {
-    const ctxSubtitle = gsap.context(() => {
-      gsap.fromTo(
-        subtitleRef.current,
-        { xPercent: -100 },
-        {
-          xPercent: 0,
-          scrollTrigger: {
-            start: "top bottom",
-            end: "top 80%",
-            scrub: 1.6,
-            trigger: subtitleRef.current,
-            invalidateOnRefresh: true,
-          },
-        },
-      );
-    });
+    const mm = gsap.matchMedia();
 
-    return () => ctxSubtitle.revert();
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean };
+
+        gsap.fromTo(
+          subtitleRef.current,
+          { xPercent: -100 },
+          {
+            xPercent: 0,
+            scrollTrigger: {
+              start: isMobile ? "top 80%" : "top bottom",
+              end: isMobile ? "top 60%" : "top 80%",
+              scrub: 1.6,
+              trigger: subtitleRef.current,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   return (
