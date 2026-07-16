@@ -58,8 +58,10 @@ const FeaturedProjects = () => {
   return (
     <section className="mt-40">
       <div className="max-w-490 mx-auto">
-        <div className="mx-8 mb-24 md:mx-16 md:mb-24">
-          <Subtitle ref={subtitleRef}>Projects</Subtitle>
+        <div className="mx-2 mb-24 sm:mx-8 md:mx-16 md:mb-24">
+          <div className="ml-6.5">
+            <Subtitle ref={subtitleRef}>Projects</Subtitle>
+          </div>
 
           <div ref={wrapperCarouselRef} className="mx-auto gap-6 max-w-460">
             <Carousel
