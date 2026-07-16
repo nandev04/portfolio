@@ -38,7 +38,7 @@ const Carousel = ({ slides }: { slides: React.JSX.Element[] }) => {
       >
         <div className="flex touch-pan-y touch-pinch-zoom select-none">
           {slides.map((slide, i) => (
-            <div key={i} className="flex-[0_0_100%] min-w-0 px-8">
+            <div key={i} className="flex-[0_0_100%] min-w-0 px-2 sm:px-4 md:px-8">
               {slide}
             </div>
           ))}

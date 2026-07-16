@@ -38,10 +38,10 @@ const CardProject = ({
           className="w-full h-full object-cover rounded-2xl md:rounded-3xl object-top shadow-lg"
           alt={altImg}
         />
-        <div className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 flex flex-col gap-3 sm:gap-5 px-1.5 sm:px-2 py-2 sm:py-5 rounded-2xl sm:rounded-3xl bg-dark-grey-700 shadow-lg shadow-black/30 md:hidden">
+        <div className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 flex flex-col gap-4 sm:gap-5 px-2.5 sm:px-2 py-3.5 sm:py-5 rounded-2xl sm:rounded-3xl bg-dark-grey-700 shadow-lg shadow-black/30 md:hidden">
           {postLink && (
             <a
-              className="w-3.5 h-3.5 sm:w-5 sm:h-5 cursor-pointer"
+              className="w-6 h-6 sm:w-5 sm:h-5 cursor-pointer"
               href={postLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -50,13 +50,13 @@ const CardProject = ({
             </a>
           )}
           <button
-            className="cursor-pointer w-3.5 h-3.5 sm:w-5 sm:h-5"
+            className="cursor-pointer w-6 h-6 sm:w-5 sm:h-5"
             onClick={() => setIsOpen(true)}
           >
             <FaInfoCircle className="w-full h-full" color="#FAFAFA" />
           </button>
           <a
-            className="w-3.5 h-3.5 sm:w-5 sm:h-5 cursor-pointer"
+            className="w-6 h-6 sm:w-5 sm:h-5 cursor-pointer"
             href={repoLink}
             target="_blank"
             rel="noopener noreferrer"

@@ -10,7 +10,7 @@ const Subtitle = ({
 }) => {
   return (
     <div ref={ref}>
-      <h2 className="flex items-center gap-4 mb-16 font-tertiary text-dark-grey-800 font-extrabold text-[clamp(2.75rem,2.92vw+1.42rem,3.75rem)] uppercase">
+      <h2 className="flex items-center gap-4 mb-16 font-tertiary text-dark-grey-800 font-extrabold text-[clamp(2rem,2.92vw+1.42rem,3.75rem)] uppercase">
         <FaTerminal className="w-[1em] h-[1em] text-dark-grey-800" />
         {children}
       </h2>

@@ -10,7 +10,7 @@ const OptionsTopics = ({
   return (
     <>
       <div className="flex flex-col justify-center items-center">
-        <h3 className="text-2xl text-center mb-4 font-quaternary font-extrabold text-dark-grey-700">
+        <h3 className="text-[clamp(1.2rem,1.92vw+0.42rem,1.5rem)] text-center mb-4 font-quaternary font-extrabold text-dark-grey-700">
           {title}
         </h3>
 

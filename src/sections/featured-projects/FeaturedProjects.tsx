@@ -12,54 +12,76 @@ const FeaturedProjects = () => {
   const subtitleRef = useRef(null);
 
   useLayoutEffect(() => {
-    const ctxCarousel = gsap.context(() => {
-      gsap.fromTo(
-        wrapperCarouselRef.current,
-        { yPercent: -10, opacity: 0 },
-        {
-          yPercent: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            toggleActions: "play none none reverse",
-            start: "10% 78%",
-            trigger: wrapperCarouselRef.current,
-            invalidateOnRefresh: true,
-          },
-        },
-      );
-    }, wrapperCarouselRef);
+    const mm = gsap.matchMedia();
 
-    return () => ctxCarousel.revert();
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean };
+
+        gsap.fromTo(
+          wrapperCarouselRef.current,
+          { yPercent: -10, opacity: 0 },
+          {
+            yPercent: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              toggleActions: "play none none reverse",
+              start: isMobile ? "10% 58%" : "10% 78%",
+              trigger: wrapperCarouselRef.current,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   useLayoutEffect(() => {
-    const ctxSubtitle = gsap.context(() => {
-      gsap.fromTo(
-        subtitleRef.current,
-        { xPercent: -100 },
-        {
-          xPercent: 0,
-          scrollTrigger: {
-            start: "top bottom",
-            end: "top 80%",
-            scrub: 1.6,
-            trigger: subtitleRef.current,
-            invalidateOnRefresh: true,
-          },
-        },
-      );
-    });
+    const mm = gsap.matchMedia();
 
-    return () => ctxSubtitle.revert();
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean };
+
+        gsap.fromTo(
+          subtitleRef.current,
+          { xPercent: -100 },
+          {
+            xPercent: 0,
+            scrollTrigger: {
+              start: isMobile ? "top 80%" : "top bottom",
+              end: isMobile ? "top 60%" : "top 80%",
+              scrub: 1.6,
+              trigger: subtitleRef.current,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   return (
     <section className="mt-40">
       <div className="max-w-490 mx-auto">
-        <div className="mx-8 mb-24 md:mx-16 md:mb-24">
-          <Subtitle ref={subtitleRef}>Projects</Subtitle>
+        <div className="mx-2 mb-24 sm:mx-8 md:mx-16 md:mb-24">
+          <div className="ml-6.5">
+            <Subtitle ref={subtitleRef}>Projects</Subtitle>
+          </div>
 
           <div ref={wrapperCarouselRef} className="mx-auto gap-6 max-w-460">
             <Carousel
@@ -97,7 +119,7 @@ const FeaturedProjects = () => {
       </div>
       <div className="flex justify-end">
         <div className="bg-dark-grey-900 rounded-l-2xl py-1 px-4 md:px-4  mb-70">
-          <span className="-ml-30 font-quinary mix-blend-difference text-white uppercase italic text-[clamp(0.75rem,2.5vw,1rem)] ">
+          <span className="-ml-30 font-quinary mix-blend-difference text-white uppercase italic text-[clamp(0.75rem,2.5vw,1rem)] font-semibold sm:font-normal">
             Mais projetos na seção pinned no GitHub
           </span>
         </div>

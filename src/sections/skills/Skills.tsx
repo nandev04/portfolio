@@ -25,70 +25,100 @@ const Skills = () => {
   };
 
   useLayoutEffect(() => {
-    const ctxButtons = gsap.context(() => {
-      gsap.fromTo(
-        "button",
-        { yPercent: -100, opacity: 0 },
-        {
-          yPercent: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.3,
-          ease: "power2.out",
-          scrollTrigger: {
-            toggleActions: "play none none reverse",
-            start: "top 90%",
-            trigger: wrapperButtonsRef.current,
-          },
-        },
-      );
-    }, wrapperButtonsRef);
+    const mm = gsap.matchMedia();
 
-    return () => ctxButtons.revert();
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean };
+
+        gsap.fromTo(
+          "button",
+          { yPercent: -100, opacity: 0 },
+          {
+            yPercent: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power2.out",
+            scrollTrigger: {
+              toggleActions: "play none none reverse",
+              start: isMobile ? "top 70%" : "top 90%",
+              trigger: wrapperButtonsRef.current,
+            },
+          },
+        );
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   useLayoutEffect(() => {
-    const ctxDropdown = gsap.context(() => {
-      gsap.fromTo(
-        wrapperDropdownRef.current,
-        { xPercent: 100, opacity: 0 },
-        {
-          xPercent: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            toggleActions: "play none none reverse",
-            start: "top 90%",
-            trigger: wrapperDropdownRef.current,
-          },
-        },
-      );
-    }, wrapperDropdownRef);
+    const mm = gsap.matchMedia();
 
-    return () => ctxDropdown.revert();
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean };
+
+        gsap.fromTo(
+          wrapperDropdownRef.current,
+          { xPercent: 100, opacity: 0 },
+          {
+            xPercent: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              toggleActions: "play none none reverse",
+              start: isMobile ? "top 70%" : "top 90%",
+              trigger: wrapperDropdownRef.current,
+            },
+          },
+        );
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   useLayoutEffect(() => {
-    const ctxStack = gsap.context(() => {
-      gsap.fromTo(
-        wrapperStackRef.current,
-        { yPercent: -5, opacity: 0 },
-        {
-          yPercent: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            toggleActions: "play none none reverse",
-            start: "top 80%",
-            trigger: wrapperStackRef.current,
-          },
-        },
-      );
-    }, wrapperStackRef);
+    const mm = gsap.matchMedia();
 
-    return () => ctxStack.revert();
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean };
+
+        gsap.fromTo(
+          wrapperStackRef.current,
+          { yPercent: -5, opacity: 0 },
+          {
+            yPercent: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              toggleActions: "play none none reverse",
+              start: isMobile ? "top 60%" : "top 80%",
+              trigger: wrapperStackRef.current,
+            },
+          },
+        );
+      },
+    );
+
+    return () => mm.revert();
   }, [options]);
 
   useLayoutEffect(() => {
@@ -100,24 +130,34 @@ const Skills = () => {
   }, [options]);
 
   useLayoutEffect(() => {
-    const ctxSubtitle = gsap.context(() => {
-      gsap.fromTo(
-        wrapperSubtitleRef.current,
-        { xPercent: -100 },
-        {
-          xPercent: 0,
-          scrollTrigger: {
-            start: "top bottom",
-            end: "top 80%",
-            scrub: 1.4,
-            trigger: wrapperSubtitleRef.current,
-            invalidateOnRefresh: true,
-          },
-        },
-      );
-    });
+    const mm = gsap.matchMedia();
 
-    return () => ctxSubtitle.revert();
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean };
+
+        gsap.fromTo(
+          wrapperSubtitleRef.current,
+          { xPercent: -100 },
+          {
+            xPercent: 0,
+            scrollTrigger: {
+              start: isMobile ? "top 80%" : "top bottom",
+              end: isMobile ? "top 60%" : "top 80%",
+              scrub: 1.4,
+              trigger: wrapperSubtitleRef.current,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   return (

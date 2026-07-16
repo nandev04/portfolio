@@ -32,21 +32,22 @@ const DialogInfo = ({
       >
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4 sm:p-10 bg-[rgba(0,0,0,0.7)]">
           <div className="relative w-full max-w-5xl">
-            <DialogPanel className="w-full relative border bg-[#f9f9f9] p-6 sm:p-12 rounded-2xl sm:rounded-3xl max-h-[90vh] overflow-y-auto">
+            <DialogPanel className="w-full relative isolate border bg-[#f9f9f9] p-6 sm:p-12 rounded-2xl sm:rounded-3xl max-h-[90vh] overflow-y-auto">
               <div className="flex items-start justify-between gap-4 mb-4">
-                <div className="min-[612px]:flex items-end">
-                  <DialogTitle
-                    className="relative font-senary text-3xl sm:text-5xl ml-4 sm:ml-5 mix-blend-difference text-[#dfdfdf] before:content-[''] before:absolute before:left-0.5 before:bottom-2 sm:before:bottom-3.5 before:translate-y-1/2
-              before:-translate-x-1/2 before:h-2.5 sm:before:h-4 before:w-2.5 sm:before:w-4 before:bg-[#dfdfdf] before:rounded-full before:mix-blend-difference"
-                  >
+                <div className="min-[612px]:flex items-end self-center">
+                  <DialogTitle className="relative font-senary text-3xl sm:text-5xal ml-4 sm:ml-5 text-dark-grey-800 sm:text-[#dfdfdf] sm:mix-blend-difference">
+                    <span
+                      aria-hidden="true"
+                      className="hidden sm:block absolute left-0.5 bottom-2 translate-y-1/2 -translate-x-1/2 h-2.5 w-2.5 bg-[#dfdfdf] rounded-full mix-blend-difference"
+                    />
                     {title}
                   </DialogTitle>
-                  <p className="font-quinary align-bottom mt-1.5 ml-1.5 italic text-[12px] min-[612px]:my-1.5 min-[612px]:mt-0">
+                  <p className="font-quinary align-bottom ml-4 italic text-[12px] min-[612px]:my-1.5 min-[612px]:ml-1.5">
                     (concluído em {completedAt})
                   </p>
                 </div>
                 <button
-                  className="bg-dark-grey-700 p-1 rounded-full hover:bg-dark-grey-800 shrink-0 w-7 h-7 sm:w-10 sm:h-10"
+                  className="bg-dark-grey-700 p-1 rounded-full hover:bg-dark-grey-800 shrink-0 w-7 h-7 sm:w-10 sm:h-10 mb-2.5"
                   onClick={() => setIsOpen(false)}
                 >
                   <IoClose color="white" size={"100%"} />
