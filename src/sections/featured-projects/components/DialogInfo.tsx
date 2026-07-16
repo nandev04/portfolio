@@ -10,12 +10,16 @@ const DialogInfo = ({
   isOpen,
   setIsOpen,
   title,
+  completedAt,
+  linkApp,
   description,
   mainStack,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   title: string;
+  completedAt: string;
+  linkApp?: string;
   description: string;
   mainStack: string[];
 }) => {
@@ -30,12 +34,17 @@ const DialogInfo = ({
           <div className="relative w-full max-w-5xl">
             <DialogPanel className="w-full relative border bg-[#f9f9f9] p-6 sm:p-12 rounded-2xl sm:rounded-3xl max-h-[90vh] overflow-y-auto">
               <div className="flex items-start justify-between gap-4 mb-4">
-                <DialogTitle
-                  className="relative font-senary text-3xl sm:text-5xl ml-4 sm:ml-5 mix-blend-difference text-[#dfdfdf] before:content-[''] before:absolute before:left-0.5 before:bottom-2 sm:before:bottom-3.5 before:translate-y-1/2
+                <div className="min-[612px]:flex items-end">
+                  <DialogTitle
+                    className="relative font-senary text-3xl sm:text-5xl ml-4 sm:ml-5 mix-blend-difference text-[#dfdfdf] before:content-[''] before:absolute before:left-0.5 before:bottom-2 sm:before:bottom-3.5 before:translate-y-1/2
               before:-translate-x-1/2 before:h-2.5 sm:before:h-4 before:w-2.5 sm:before:w-4 before:bg-[#dfdfdf] before:rounded-full before:mix-blend-difference"
-                >
-                  {title}
-                </DialogTitle>
+                  >
+                    {title}
+                  </DialogTitle>
+                  <p className="font-quinary align-bottom mt-1.5 ml-1.5 italic text-[12px] min-[612px]:my-1.5 min-[612px]:mt-0">
+                    (concluído em {completedAt})
+                  </p>
+                </div>
                 <button
                   className="bg-dark-grey-700 p-1 rounded-full hover:bg-dark-grey-800 shrink-0 w-7 h-7 sm:w-10 sm:h-10"
                   onClick={() => setIsOpen(false)}
@@ -45,10 +54,21 @@ const DialogInfo = ({
               </div>
               <Description
                 className={
-                  "bg-[#EDEDED] p-4 sm:p-6 pb-16 sm:pb-20 rounded-xl font-quinary text-dark-grey-700 text-sm sm:text-base"
+                  "bg-[#EDEDED] p-4 sm:p-6 pb-10 sm:pb-20 rounded-xl font-quinary text-dark-grey-700 text-sm sm:text-base"
                 }
               >
                 {description}
+                {linkApp && (
+                  <p className="mt-4">
+                    🌐 Link da aplicação:{" "}
+                    <a
+                      className="text-blue-600 underline"
+                      href="https://www.easylist.app.br/"
+                    >
+                      easylist.app.br
+                    </a>
+                  </p>
+                )}
               </Description>
 
               <div className="mt-6 sm:mt-8 ml-4 sm:ml-5 mb-4">

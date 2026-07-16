@@ -8,15 +8,15 @@ const About = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         wrapperRef.current,
-        { yPercent: -5, opacity: 0 },
+        { yPercent: -10, opacity: 0 },
         {
           yPercent: 0,
           opacity: 1,
-          duration: 1,
-          ease: "power2.out",
+          duration: 0.5,
+          ease: "power1.inOut",
           scrollTrigger: {
             toggleActions: "play none none reverse",
-            start: "top 87%",
+            start: "-10% 80%",
             trigger: wrapperRef.current,
           },
         },
