@@ -97,7 +97,7 @@ const FeaturedProjects = () => {
       </div>
       <div className="flex justify-end">
         <div className="bg-dark-grey-900 rounded-l-2xl py-1 px-4 md:px-4  mb-70">
-          <span className="-ml-30 font-quinary mix-blend-difference text-white uppercase italic text-[clamp(0.75rem,2.5vw,1.25rem)] ">
+          <span className="-ml-30 font-quinary mix-blend-difference text-white uppercase italic text-[clamp(0.75rem,2.5vw,1rem)] ">
             Mais projetos na seção pinned no GitHub
           </span>
         </div>
