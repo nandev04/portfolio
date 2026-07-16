@@ -36,7 +36,7 @@ const Skills = () => {
         const { isMobile } = context.conditions as { isMobile: boolean };
 
         gsap.fromTo(
-          "button",
+          wrapperButtonsRef.current?.querySelectorAll("button") ?? [],
           { yPercent: -100, opacity: 0 },
           {
             yPercent: 0,
