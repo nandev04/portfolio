@@ -3,8 +3,8 @@ Site de portfólio desenvolvido para apresentar meu perfil profissional, redes s
 
 ## 🎨 Design Reference
 
-![Portfolio Design Desktop](https://imgur.com/97hutR8)
-![Portfolio Design Mobile](https://imgur.com/OlDcY9x)
+![Portfolio Design Desktop](https://i.imgur.com/97hutR8.png)
+![Portfolio Design Mobile](https://i.imgur.com/OlDcY9x.png)
 
 ## 🚀 Tecnologias
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
