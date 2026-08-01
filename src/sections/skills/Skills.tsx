@@ -177,7 +177,11 @@ const Skills = () => {
           >
             {(Object.entries(stack) as [optionsStack, { label: string }][]).map(
               ([key, { label }]) => (
-                <ButtonStack key={key} setState={() => setOptions(key)}>
+                <ButtonStack
+                  key={key}
+                  setState={() => setOptions(key)}
+                  isActive={key === options}
+                >
                   {label}
                 </ButtonStack>
               ),
