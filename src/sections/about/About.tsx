@@ -39,12 +39,13 @@ const About = () => {
           Desde cedo me interesso por tecnologia, essa curiosidade foi crescendo
           e me levou para o desenvolvimento, onde fui descobrindo que gosto
           tanto de construir interfaces quanto de pensar na estrutura por trás
-          delas. Tenho interesse por diversas áreas: DevOps, front-end, back-end
-          e dados, mas atualmente meu foco tem sido em back-end, front-end e
+          delas. Atualmente meu foco é o desenvolvimento full stack, com
+          back-end e front-end, mas venho ampliando esse olhar para a área de
           dados. Gosto de entender como as peças se conectam, desde a
-          experiência do usuário até a infraestrutura que sustenta tudo isso.
-          Estou cursando Engenharia de Software e acredito que o melhor jeito de
-          aprender é construindo. Por isso esse portfólio existe.
+          experiência do usuário até a infraestrutura e os dados que sustentam
+          tudo isso. Estou cursando Engenharia de Software e acredito que o
+          melhor jeito de aprender é construindo. Por isso esse portfólio
+          existe.
         </p>
       </div>
     </section>
